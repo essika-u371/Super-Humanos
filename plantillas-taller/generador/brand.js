@@ -142,7 +142,8 @@ function ribbon(slide, text, x, y, w, opts = {}) {
   const h = opts.h || 0.62;
   slide.addShape("chevron", { x: x - 0.28, y: y + 0.11, w: 0.22, h: h - 0.22, fill: { color: yellow ? HEX.dk1 : HEX.accent1 }, line: { width: 0, color: yellow ? HEX.dk1 : HEX.accent1 } });
   slide.addShape("chevron", { x, y, w, h, fill: { color: yellow ? HEX.accent1 : HEX.dk1 }, line: { width: 0, color: yellow ? HEX.accent1 : HEX.dk1 } });
-  slide.addText(text.toUpperCase(), { x: x + 0.35, y, w: w - 0.75, h, fontFace: THEME.headFontFace, fontSize: opts.fontSize || 22, bold: true, italic: true, color: yellow ? "0D0D0C" : "FFFFFF", margin: 0, valign: "middle", isTextBox: true, fit: "shrink" });
+  const off = h * 0.55 + 0.05;
+  slide.addText(text.toUpperCase(), { x: x + off, y, w: w - off - 0.4, h, fontFace: THEME.headFontFace, fontSize: opts.fontSize || 22, bold: true, italic: true, color: yellow ? "0D0D0C" : "FFFFFF", margin: 0, valign: "middle", isTextBox: true, fit: "shrink" });
 }
 
 /* Barra de chevrones (ChevronProgress): segmentos con rótulo arriba y texto debajo */

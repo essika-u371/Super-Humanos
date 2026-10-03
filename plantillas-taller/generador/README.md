@@ -2,6 +2,7 @@
 
 Tres plantillas de PowerPoint construidas con la piel Super Humanos del design system Campus Pivot.
 
+- `generica.js` → Plantilla base · estilos de diapositiva (24 estilos vacíos)
 - `e1.js` → Encuentro 1 · concepto y práctica (90 minutos)
 - `consultorio.js` → Consultorio (60 minutos)
 - `e2.js` → Encuentro 2 · aplicación (90 minutos)
