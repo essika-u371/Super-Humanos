@@ -15,23 +15,31 @@ const bold = (t) => run(t, { bold: true });
 
 const noBorder = { style: BorderStyle.NONE, size: 0, color: "FFFFFF" };
 const thin = { style: BorderStyle.SINGLE, size: 6, color: LINE };
+const CONTENT_DXA = 9972; // carta 12240 menos márgenes de 1134 a cada lado
 function table(header, rows, widths) {
   const total = widths.reduce((a, b) => a + b, 0);
+  const dxa = widths.map((w) => Math.round(w / total * CONTENT_DXA));
+  dxa[dxa.length - 1] = CONTENT_DXA - dxa.slice(0, -1).reduce((a, b) => a + b, 0);
   const cell = (t, i, isHead) => new TableCell({
-    width: { size: Math.round(widths[i] / total * 100), type: WidthType.PERCENTAGE },
+    width: { size: dxa[i], type: WidthType.DXA },
     shading: isHead ? { type: ShadingType.CLEAR, fill: BLACK, color: BLACK } : undefined,
     margins: { top: 80, bottom: 80, left: 110, right: 110 },
     borders: { top: thin, bottom: thin, left: noBorder, right: noBorder },
     children: (Array.isArray(t) ? t : [t]).map((line) => new Paragraph({ spacing: { after: 40, line: 260 }, children: [isHead ? new TextRun({ text: String(line).toUpperCase(), font: HF, size: 19, bold: true, color: YELLOW }) : (line && line.children ? line : run(String(line), { size: 19 }))] })),
   });
   return new Table({
-    width: { size: 100, type: WidthType.PERCENTAGE },
+    width: { size: CONTENT_DXA, type: WidthType.DXA },
+    columnWidths: dxa,
+    layout: "fixed",
     rows: [new TableRow({ tableHeader: true, children: header.map((h, i) => cell(h, i, true)) }), ...rows.map((r) => new TableRow({ cantSplit: true, children: r.map((c, i) => cell(c, i, false)) }))],
   });
 }
 const box = (title, lines) => new Table({
-  width: { size: 100, type: WidthType.PERCENTAGE },
+  width: { size: CONTENT_DXA, type: WidthType.DXA },
+  columnWidths: [CONTENT_DXA],
+  layout: "fixed",
   rows: [new TableRow({ children: [new TableCell({
+    width: { size: CONTENT_DXA, type: WidthType.DXA },
     shading: { type: ShadingType.CLEAR, fill: BG, color: BG }, margins: { top: 140, bottom: 140, left: 200, right: 200 },
     borders: { top: noBorder, bottom: noBorder, left: { style: BorderStyle.SINGLE, size: 36, color: YELLOW }, right: noBorder },
     children: [new Paragraph({ spacing: { after: 80 }, children: [new TextRun({ text: title.toUpperCase(), font: HF, size: 24, bold: true, color: BLACK })] }), ...lines.map((l) => new Paragraph({ spacing: { after: 60, line: 280 }, children: [run(l, { size: 20 })] }))],
