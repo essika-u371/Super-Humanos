@@ -111,7 +111,7 @@ children.push(table(["Paso", "Qué entrega el equipo", "Quién revisa", "Tiempo"
 /* 7 · Dominios */
 children.push(H1("7 · Dominios por fase"));
 children.push(table(["Fase", "Dominios que se habilitan", "Desde"], [
-  ["1 · Sandbox", "chatgpt.com · gemini.google.com · copilot.microsoft.com", "16 de octubre de 2026"],
+  ["1 · Sandbox", "chatgpt.com · gemini.google.com · copilot.microsoft.com", "21 de octubre de 2026"],
   ["2 · Cuenta corporativa", "Los de la fase 1 más m365.cloud.microsoft y los de SharePoint y OneDrive del grupo. NotebookLM solo si entra en el nivel 2", "13 de enero de 2027"],
   ["3 · Licencias", "Los que requiera cada licencia aprobada", "Abril de 2027"],
 ], [2.2, 5.6, 2.2]));
@@ -119,8 +119,8 @@ children.push(table(["Fase", "Dominios que se habilitan", "Desde"], [
 /* 8 · Qué necesita el programa de TIC */
 children.push(H1("8 · Lo que el programa necesita de TIC"));
 children.push(table(["Qué", "Para qué", "Fecha"], [
-  ["Dominios de la fase 1 abiertos en la red de las siete empresas", "Encuentro 1 del Taller 1 comercial", "Viernes 16 de octubre"],
-  ["Confirmación escrita de la regla de cuenta personal de la sección 3", "Enseñarla en el Taller 1 con respaldo", "Viernes 16 de octubre"],
+  ["Dominios de la fase 1 abiertos en la red de las siete empresas", "Encuentro 1 del Taller 1 administrativo", "Lunes 19 de octubre"],
+  ["Confirmación escrita de la regla de cuenta personal de la sección 3", "Enseñarla en el Taller 1 con respaldo", "Lunes 19 de octubre"],
   ["Canal de consulta y reporte: correo o canal de Teams", "Decírselo a la gente en el Taller 1", "Miércoles 21 de octubre"],
   ["Plan de Microsoft 365 por empresa y estado de Copilot Chat", "Dimensionar el nivel 0 y el precio del nivel 1", "Viernes 13 de noviembre"],
   ["Cuentas corporativas para las 20 personas sin correo", "Fase 2 completa", "Martes 1 de diciembre"],
