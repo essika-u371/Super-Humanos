@@ -2,7 +2,7 @@ const { fs, path, Document, Packer, Paragraph, TextRun, Header, Footer, PageNumb
 
 const PERFILES = {
   comercial: {
-    nombre: "comercial", NOMBRE: "COMERCIAL", docente: "Brayan Arias", DOCENTE: "BRAYAN ARIAS",
+    nombre: "comercial", NOMBRE: "COMERCIAL", docente: "Mateo Peralta", DOCENTE: "MATEO PERALTA",
     horario: "viernes de 7:30 a 9:00 a.m.", ventana: "entre los días 1 y 20 de cada mes",
     talleres: [
       ["T1", "IA para el asesor comercial", "IA generativa, prompting y uso responsable", "Aprendizaje continuo", "La IA no sabe nada de tu cliente (todavía)", "5 a 8"],
