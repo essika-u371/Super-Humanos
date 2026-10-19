@@ -32,7 +32,7 @@ const PERFILES = {
       ["T5", "Vie 15 ene", "Vie 22 ene", "Vie 29 ene", "Vie 5 feb"],
       ["T6", "Vie 12 feb", "Vie 19 feb", "Vie 26 feb", "Vie 5 mar"],
     ],
-    notaEntregas: "El Taller 1 y el Taller 2 se preparan en paralelo: el guion del T2 vence el mismo viernes 16 y sus materiales el 23. Las fechas del T1 las fijó la dirección del programa para esta semana; de T2 en adelante rigen las de la hoja «Preparación de materiales» del cronograma.",
+    notaEntregas: "El Taller 1 y el Taller 2 se preparan en paralelo: los materiales del T2 vencen el viernes 23. Las fechas del T1 las fijó la dirección del programa para esta semana; de T2 en adelante rigen las de la hoja «Preparación de materiales» del cronograma.",
     diag: [
       "Más de la mitad del grupo nunca ha abierto una herramienta de IA o la usó una o dos veces en el último mes. El Taller 1 avanza al ritmo del más lento, con una sola herramienta y sin jerga.",
       "31 comerciales trabajan sin computador propio y varios se conectan desde el celular. Cada práctica tiene una versión para celular: el prompt se copia desde el kit y la evidencia es una captura.",
@@ -55,7 +55,7 @@ const PERFILES = {
       ["T6", "Proyecto de mejora con IA", "Proyecto de mejora: medir, rediseñar y demostrar", "Prevención", "Mide, mejora, demuestra", "25 a 28"],
     ],
     fechas: [
-      ["T1", "Mié 21 oct", "Vie 23 oct", "Mié 28 oct", "Mié 4 nov"],
+      ["T1", "Vie 23 oct", "Mar 27 oct", "Mié 28 oct", "Mié 4 nov"],
       ["T2", "Mié 11 nov", "Mar 17 nov", "Mié 18 nov", "Mié 25 nov"],
       ["T3", "Jue 10 dic", "Lun 14 dic", "Mié 16 dic", "Vie 18 dic"],
       ["T4", "Jue 14 ene", "Lun 18 ene", "Jue 21 ene", "Jue 28 ene"],
@@ -63,18 +63,18 @@ const PERFILES = {
       ["T6", "Mié 10 mar", "Lun 15 mar", "Mié 17 mar", "Mié 24 mar"],
     ],
     notasFechas: [
-      "El encuentro 2 del Taller 1 cae el 28 de octubre, tres días fuera de la ventana administrativa del día 25. La dirección del programa gestiona la excepción con Carolina Rivera.",
+      "El encuentro 1 del Taller 1 va en viernes 23 de octubre, a la misma hora de 8:00 y en paralelo con el encuentro 1 comercial. El encuentro 2 cae el 28 de octubre, tres días fuera de la ventana administrativa del día 25; la dirección del programa gestiona la excepción con Carolina Rivera.",
       "El consultorio del Taller 2 es un martes porque el lunes 16 de noviembre es festivo. El Taller 3 abre en jueves 10 de diciembre y el Taller 4 en jueves 14 y 21 de enero, después del regreso de vacaciones.",
     ],
     entregas: [
-      ["T1", "Vie 16 oct", "Lun 19 oct", "Mar 20 oct", "Mié 21 oct"],
+      ["T1", "Mar 20 oct", "Vie 23 oct", "Mié 21 oct", "Vie 23 oct"],
       ["T2", "Mié 21 oct", "Mié 28 oct", "Mié 4 nov", "Mié 11 nov"],
       ["T3", "Jue 19 nov", "Jue 26 nov", "Jue 3 dic", "Jue 10 dic"],
       ["T4", "Mié 16 dic", "Mié 23 dic", "Mié 6 ene", "Jue 14 ene"],
       ["T5", "Mié 20 ene", "Mié 27 ene", "Mié 3 feb", "Mié 10 feb"],
       ["T6", "Mié 17 feb", "Mié 24 feb", "Mié 3 mar", "Mié 10 mar"],
     ],
-    notaEntregas: "El Taller 1 arranca en seis días. Sus fechas de entrega las fijó la dirección del programa para esta semana; de T2 en adelante rigen las de la hoja «Preparación de materiales» del cronograma.",
+    notaEntregas: "El Taller 1 arranca el viernes 23 de octubre. El guion y la presentación del encuentro 1 van el martes 20, la prueba técnica el miércoles 21 y los materiales del encuentro 2 con la evaluación el viernes 23. De T2 en adelante rigen las fechas de la hoja «Preparación de materiales» del cronograma.",
     diag: [
       "Más de la mitad del grupo nunca ha abierto una herramienta de IA o la usó una o dos veces en el último mes. El Taller 1 avanza al ritmo del más lento, con una sola herramienta y sin jerga.",
       "89 administrativos dedican más de 5 horas semanales a tareas repetitivas. En el Taller 2 cada persona anota cuánto le toma el reporte del mes antes de tocarlo.",
@@ -93,7 +93,7 @@ function build(p) {
   children.push(new Paragraph({ spacing: { before: 1200, after: 100 }, children: [new TextRun({ text: "SUPER HUMANOS", font: HF, size: 28, bold: true, color: GOLD, characterSpacing: 60 })] }));
   children.push(new Paragraph({ spacing: { after: 200 }, children: [new TextRun({ text: "PAQUETE DEL DOCENTE", font: HF, size: 72, bold: true, color: BLACK })] }));
   children.push(new Paragraph({ spacing: { after: 300 }, children: [new TextRun({ text: `PERFIL ${p.NOMBRE} · ${p.DOCENTE}`, font: HF, size: 34, bold: true, color: BLACK })] }));
-  children.push(P("Pivot Power · 15 de octubre de 2026 · fechas según el cronograma ajustado del 15 de octubre", { run: { color: MUTED } }));
+  children.push(P("Pivot Power · 19 de octubre de 2026 · fechas según el cronograma ajustado del 19 de octubre", { run: { color: MUTED } }));
   children.push(spacer());
   children.push(box("Para qué sirve este documento", [
     `Abre el paquete con el que preparas los seis talleres del perfil ${p.nombre}. Trae tus fechas, lo que entregas y cuándo, cómo se arma cada encuentro, las reglas que condicionan el contenido y la lista de archivos de la carpeta. Cuando dos documentos difieran en una fecha, vale la de este documento y la del cronograma.`,
@@ -193,7 +193,7 @@ function build(p) {
   children.push(H1("7 · Los archivos de la carpeta"));
   children.push(table(["Archivo", "Qué es y cuándo lo usas"], [
     [`Paquete del docente · perfil ${p.nombre}`, "Este documento."],
-    ["Cronograma Super Humanos · etapa 1", "Todas las fechas del programa: encuentros, retos, preparación de materiales, decisiones y pendientes. Vale la versión del 15 de octubre."],
+    ["Cronograma Super Humanos · etapa 1", "Todas las fechas del programa: encuentros, retos, preparación de materiales, decisiones y pendientes. Vale la versión del 19 de octubre."],
     [`Sesiones de Teams · perfil ${p.nombre}`, "Tus 18 reuniones con nombre y descripción, tal como las recibe la gente en la invitación. El nombre de la sesión abre la portada de cada presentación."],
     ["Temario detallado de los 12 talleres", "Contenido completo de cada taller. Lee los seis de tu perfil y los seis del otro, para que los dos programas se hablen."],
     ["Guía de contenido por taller", "Bloques, minutos y diapositivas de cada encuentro; mapa del Taller 1; lo que no puede faltar de T2 a T6; checklist de entrega. Las fechas que trae están superadas por este documento."],
@@ -217,7 +217,7 @@ function build(p) {
   ], [5.4, 4.6]));
   children.push(spacer());
   children.push(box("Primer paso", [
-    `Lee el Taller 1 de tu perfil en el temario y en la guía de contenido, elige el caso de la demostración en la guía de casos y envía el guion a Jessica Peña el ${p.entregas[0][1].replace("Vie ", "viernes ").replace("Lun ", "lunes ")} de octubre. La prueba técnica del Taller 1 se agenda en Teams en la fecha de la tabla de la sección 2.`,
+    `Lee el Taller 1 de tu perfil en el temario y en la guía de contenido, elige el caso de la demostración en la guía de casos y envía el guion a Jessica Peña el ${p.entregas[0][1].replace("Vie ", "viernes ").replace("Lun ", "lunes ").replace("Mar ", "martes ")} de octubre. La prueba técnica del Taller 1 se agenda en Teams en la fecha de la tabla de la sección 2.`,
   ]));
 
   const doc = new Document({
@@ -227,7 +227,7 @@ function build(p) {
     sections: [{
       properties: { page: { margin: { top: 1100, bottom: 1100, left: 1134, right: 1134 } } },
       headers: { default: new Header({ children: [new Paragraph({ children: [new TextRun({ text: `SUPER HUMANOS · PAQUETE DEL DOCENTE · PERFIL ${p.NOMBRE}`, font: HF, size: 17, bold: true, color: MUTED, characterSpacing: 30 })] })] }) },
-      footers: { default: new Footer({ children: [new Paragraph({ tabStops: [{ type: TabStopType.RIGHT, position: 9600 }], children: [new TextRun({ text: "Pivot Power · 15 de octubre de 2026", font: BF, size: 16, color: MUTED }), new TextRun({ text: "\t", font: BF, size: 16 }), new TextRun({ children: [PageNumber.CURRENT], font: HF, size: 18, bold: true, color: BLACK })] })] }) },
+      footers: { default: new Footer({ children: [new Paragraph({ tabStops: [{ type: TabStopType.RIGHT, position: 9600 }], children: [new TextRun({ text: "Pivot Power · 19 de octubre de 2026", font: BF, size: 16, color: MUTED }), new TextRun({ text: "\t", font: BF, size: 16 }), new TextRun({ children: [PageNumber.CURRENT], font: HF, size: 18, bold: true, color: BLACK })] })] }) },
       children,
     }],
   });

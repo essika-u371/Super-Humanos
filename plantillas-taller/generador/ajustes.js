@@ -10,13 +10,13 @@ children.push(new Paragraph({ spacing: { before: 1200, after: 100 }, children: [
 children.push(new Paragraph({ spacing: { after: 200 }, children: [new TextRun({ text: "AJUSTES A LOS TALLERES", font: HF, size: 72, bold: true, color: BLACK })] }));
 children.push(new Paragraph({ spacing: { after: 300 }, children: [new TextRun({ text: "A PARTIR DEL DIAGNÓSTICO PARCIAL Y DE LA POLÍTICA DE USO DE IA", font: HF, size: 34, bold: true, color: BLACK })] }));
 children.push(P("Diagnóstico con corte del 14 de octubre de 2026: 415 personas con índice completo, 62 % de la base. Política de uso de inteligencia artificial y gestión de riesgo de GYJ Ferreterías S.A., código TH-PT-003, versión 1.", { run: { color: MUTED } }));
-children.push(P("Pivot Power · documento de trabajo para la dirección del programa y los dos docentes · 15 de octubre de 2026 · fechas según el cronograma ajustado del 15 de octubre", { run: { color: MUTED } }));
+children.push(P("Pivot Power · documento de trabajo para la dirección del programa y los dos docentes · 19 de octubre de 2026 · fechas según el cronograma ajustado del 19 de octubre", { run: { color: MUTED } }));
 children.push(spacer());
 children.push(box("Qué hace este documento", [
   "Cruza tres fuentes: los resultados del diagnóstico, la política de IA que firmó la gente y el temario detallado de los doce talleres con su guía de contenido.",
   "Propone los cambios taller por taller, con el lugar exacto del temario o de la guía donde se aplican y el dato que los sustenta.",
   "Separa lo que se cambia hoy de lo que depende de una decisión de G&J. Las decisiones pendientes van en la sección 7.",
-  "Con las fechas corridas, el Taller 1 administrativo arranca el miércoles 21 de octubre y el comercial el viernes 23. Los ajustes del Taller 1 entran completos en los dos encuentros, en el kit del participante y en los retos.",
+  "Con las fechas corridas, los dos talleres 1 arrancan el viernes 23 de octubre: el comercial a las 7:30 y el administrativo a las 8:00. Los ajustes del Taller 1 entran completos en los dos encuentros, en el kit del participante y en los retos.",
 ]));
 
 /* 1 · Datos */
@@ -124,7 +124,7 @@ children.push(adj([
 /* 5 · Administrativo */
 children.push(H1("5 · Ajustes por taller · administrativo"));
 children.push(H2("Taller 1 · IA para la gestión administrativa"));
-children.push(P("Encuentro 1 el miércoles 21 de octubre, consultorio el viernes 23, encuentro 2 el miércoles 28. Los ajustes entran en los dos encuentros, en el kit y en la evaluación.", { run: { color: MUTED } }));
+children.push(P("Encuentro 1 el viernes 23 de octubre, consultorio el martes 27, encuentro 2 el miércoles 28. Los ajustes entran en los dos encuentros, en el kit y en la evaluación.", { run: { color: MUTED } }));
 children.push(adj([
   ["El taller abre por la estructura de comunicar: el resumen de cinco puntos de la demostración se convierte en lo que se presenta en diez minutos: qué pasó, por qué, qué proponemos, qué necesitamos. En el encuentro 2 cada persona lo hace con un documento suyo.", "Temario, bloques «Casos del rol administrativo» y «Mi primera tarea con IA». Guía, demostración y «Encuentro 2».", "Ítem D_5 con 74,8 %, el más bajo del perfil."],
   ["El documento normativo de la demostración es un texto público: la Ley 1581 de 2012 o la Circular 002 de 2024 de la SIC, que la política cita. Así la demostración enseña la norma y evita pegar un documento interno en una herramienta pública.", "Guía, demostración del T1 administrativo, paso 1.", "Política 7.2: información interna fuera de plataformas públicas."],
@@ -177,7 +177,7 @@ children.push(table(["Reto", "Como está", "Como queda", "Por qué"], [
 children.push(H1("7 · Decisiones pendientes"));
 children.push(P("Cinco decisiones que condicionan los ajustes. Las dos primeras tienen fecha de esta semana."));
 children.push(table(["Decisión", "Quién", "Para cuándo", "Qué pasa si no se toma"], [
-  ["Lista escrita de herramientas y cuentas autorizadas: qué herramienta, con qué cuenta, desde qué red. Si NotebookLM entra o no.", "TIC, con Gestión Humana", "21 de octubre, encuentro 1 administrativo", "El programa sigue con cuenta personal y material del kit en todas las prácticas con información real."],
+  ["Lista escrita de herramientas y cuentas autorizadas: qué herramienta, con qué cuenta, desde qué red. Si NotebookLM entra o no.", "TIC, con Gestión Humana", "23 de octubre, encuentro 1 de los dos perfiles", "El programa sigue con cuenta personal y material del kit en todas las prácticas con información real."],
   ["Autorización de Sistemas para que el programa use cuentas personales con el material del kit, por escrito.", "TIC", "20 de octubre", "El docente lo pide en voz alta y queda sin respaldo."],
   ["Reemplazo del reto 5 del 22 de octubre.", "Jessica Peña", "17 de octubre", "Sale el reto que pide pegar la política en una IA pública."],
   ["Comunicar los grupos G1 a G4 ahora o al cerrar la convocatoria.", "Jessica Peña", "17 de octubre", "La asignación cambia cuando entren las 259 pendientes."],
@@ -189,10 +189,10 @@ children.push(H1("8 · Qué se edita en cada documento"));
 children.push(P("Lista de ediciones para aplicar una vez tomadas las decisiones de la sección 7. Cada documento conserva su nombre; la versión anterior pasa a «09 · Versiones anteriores» con fecha y la palabra «superada»."));
 children.push(table(["Documento", "Ediciones"], [
   ["Temario detallado de los 12 talleres", "Sección 3 reescrita. Sección 4: el caso de 30 firmas pasa a «talleres 4 y 6». T1, T2, T3, T4 y T5 de los dos perfiles con los bloques de las secciones 4 y 5 de este documento. Sección 7 con los cuatro retos cambiados. Todo ejercicio «con archivo propio» con la coletilla «sin datos de personas o con el del kit»."],
-  ["Guía de contenido por taller", "Fechas del T1: 23 y 30 de octubre comercial, 21 y 28 administrativo. T2 comercial: 13 y 20 de noviembre. T1 de los dos perfiles: demostración con el archivo del kit y el paso de anonimizar; evaluación con las preguntas 6 y 7 sobre la política. T2 a T5: «Lo que no puede faltar» con los puntos nuevos. Sección 6, estándares: regla de cuenta y de datos."],
+  ["Guía de contenido por taller", "Fechas del T1: 23 y 30 de octubre comercial, 23 y 28 administrativo. T2 comercial: 13 y 20 de noviembre. T1 de los dos perfiles: demostración con el archivo del kit y el paso de anonimizar; evaluación con las preguntas 6 y 7 sobre la política. T2 a T5: «Lo que no puede faltar» con los puntos nuevos. Sección 6, estándares: regla de cuenta y de datos."],
   ["Kit del docente", "Anexo con la política completa, la lista de datos que nunca entran a una IA y la lista de herramientas autorizadas cuando TIC la entregue. El dato de cuenta personal del diagnóstico. Los archivos del kit de la sección 3B."],
   ["Guía de casos de G&J", "Cada caso que trae datos de personas lleva la marca «usar con el archivo del kit»."],
-  ["Cronograma", "La versión ajustada del 15 de octubre reemplaza a la de Drive; la anterior pasa a 09 como superada. En la hoja Jueves de Superpoderes, los retos 5, 10, 17 y 22 con el texto nuevo. En Decisiones y Roles, los retos terminan el 29 de abril y el rol instruccional lo asume la dirección."],
+  ["Cronograma", "La versión ajustada del 19 de octubre reemplaza a la de Drive; la anterior pasa a 09 como superada. En la hoja Jueves de Superpoderes, los retos 5, 10, 17 y 22 con el texto nuevo. En Decisiones y Roles, los retos terminan el 29 de abril y el rol instruccional lo asume la dirección."],
   ["Manual de bienvenida para participantes", "Un párrafo con la regla de cuenta y de datos, en las palabras de la política."],
 ], [3.0, 7.0]));
 children.push(spacer());
@@ -207,7 +207,7 @@ const doc = new Document({
   sections: [{
     properties: { page: { margin: { top: 1100, bottom: 1100, left: 1134, right: 1134 } } },
     headers: { default: new Header({ children: [new Paragraph({ children: [new TextRun({ text: "SUPER HUMANOS · AJUSTES A LOS TALLERES · DIAGNÓSTICO Y POLÍTICA DE IA", font: HF, size: 17, bold: true, color: MUTED, characterSpacing: 30 })] })] }) },
-    footers: { default: new Footer({ children: [new Paragraph({ tabStops: [{ type: TabStopType.RIGHT, position: 9600 }], children: [new TextRun({ text: "Pivot Power · documento de trabajo · 15 de octubre de 2026", font: BF, size: 16, color: MUTED }), new TextRun({ text: "\t", font: BF, size: 16 }), new TextRun({ children: [PageNumber.CURRENT], font: HF, size: 18, bold: true, color: BLACK })] })] }) },
+    footers: { default: new Footer({ children: [new Paragraph({ tabStops: [{ type: TabStopType.RIGHT, position: 9600 }], children: [new TextRun({ text: "Pivot Power · documento de trabajo · 19 de octubre de 2026", font: BF, size: 16, color: MUTED }), new TextRun({ text: "\t", font: BF, size: 16 }), new TextRun({ children: [PageNumber.CURRENT], font: HF, size: 18, bold: true, color: BLACK })] })] }) },
     children,
   }],
 });

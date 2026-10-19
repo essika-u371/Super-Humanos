@@ -8,7 +8,7 @@ children.push(new Paragraph({ spacing: { before: 0, after: 100 }, children: [new
 children.push(new Paragraph({ spacing: { after: 200 }, children: [new TextRun({ text: "PROPUESTA PARA LA POLÍTICA DE USO DE IA", font: HF, size: 64, bold: true, color: BLACK })] }));
 children.push(new Paragraph({ spacing: { after: 300 }, children: [new TextRun({ text: "FASES DE ADOPCIÓN, REGLA DE INFORMACIÓN POR CUENTA Y LICENCIAS POR ACTIVIDAD", font: HF, size: 32, bold: true, color: BLACK })] }));
 children.push(P("Para el área de TIC y Gestión del Talento Humano de G&J Empresas de Acero. Complementa la política de uso de inteligencia artificial y gestión de riesgo, código TH-PT-003, versión 1, que rige para las siete empresas del grupo.", { run: { color: MUTED } }));
-children.push(P("Pivot Power · 15 de octubre de 2026 · versión para discusión", { run: { color: MUTED } }));
+children.push(P("Pivot Power · 19 de octubre de 2026 · versión para discusión", { run: { color: MUTED } }));
 children.push(spacer());
 children.push(box("Qué propone este documento", [
   "Una adopción en tres fases, amarradas al calendario del programa: aprendizaje con herramientas gratuitas, trabajo con información interna en cuenta corporativa y licencias pagas asignadas por actividad.",
@@ -112,7 +112,7 @@ children.push(table(["Paso", "Qué entrega el equipo", "Quién revisa", "Tiempo"
 /* 7 · Dominios */
 children.push(H1("7 · Dominios por fase"));
 children.push(table(["Fase", "Dominios que se habilitan", "Desde"], [
-  ["1 · Sandbox", "chatgpt.com · gemini.google.com · copilot.microsoft.com", "21 de octubre de 2026"],
+  ["1 · Sandbox", "chatgpt.com · gemini.google.com · copilot.microsoft.com", "23 de octubre de 2026"],
   ["2 · Cuenta corporativa", "Los de la fase 1 más m365.cloud.microsoft y los de SharePoint y OneDrive del grupo. NotebookLM solo si entra en el nivel 2", "13 de enero de 2027"],
   ["3 · Licencias", "Los que requiera cada licencia aprobada", "Abril de 2027"],
 ], [2.2, 5.6, 2.2]));
@@ -120,9 +120,9 @@ children.push(table(["Fase", "Dominios que se habilitan", "Desde"], [
 /* 8 · Qué necesita el programa de TIC */
 children.push(H1("8 · Lo que el programa necesita de TIC"));
 children.push(table(["Qué", "Para qué", "Fecha"], [
-  ["Dominios de la fase 1 abiertos en la red de las siete empresas", "Encuentro 1 del Taller 1 administrativo", "Lunes 19 de octubre"],
-  ["Confirmación escrita de la regla de cuenta personal de la sección 3", "Enseñarla en el Taller 1 con respaldo", "Lunes 19 de octubre"],
-  ["Canal de consulta y reporte: correo o canal de Teams", "Decírselo a la gente en el Taller 1", "Miércoles 21 de octubre"],
+  ["Dominios de la fase 1 abiertos en la red de las siete empresas", "Encuentro 1 de los dos talleres 1", "Miércoles 21 de octubre"],
+  ["Confirmación escrita de la regla de cuenta personal de la sección 3", "Enseñarla en el Taller 1 con respaldo", "Miércoles 21 de octubre"],
+  ["Canal de consulta y reporte: correo o canal de Teams", "Decírselo a la gente en el Taller 1", "Viernes 23 de octubre"],
   ["Plan de Microsoft 365 por empresa y estado de Copilot Chat", "Dimensionar el nivel 0 y el precio del nivel 1", "Viernes 13 de noviembre"],
   ["Cuentas corporativas para las 20 personas sin correo", "Fase 2 completa", "Martes 1 de diciembre"],
   ["Fecha de entrada de Salesforce", "Definir el nivel 3", "Martes 1 de diciembre"],
@@ -140,7 +140,7 @@ const doc = new Document({
   sections: [{
     properties: { page: { margin: { top: 1100, bottom: 1100, left: 1134, right: 1134 } } },
     headers: { default: new Header({ children: [new Paragraph({ children: [new TextRun({ text: "SUPER HUMANOS · PROPUESTA PARA LA POLÍTICA DE USO DE IA", font: HF, size: 17, bold: true, color: MUTED, characterSpacing: 30 })] })] }) },
-    footers: { default: new Footer({ children: [new Paragraph({ tabStops: [{ type: TabStopType.RIGHT, position: 9600 }], children: [new TextRun({ text: "Pivot Power · versión para discusión · 15 de octubre de 2026", font: BF, size: 16, color: MUTED }), new TextRun({ text: "\t", font: BF, size: 16 }), new TextRun({ children: [PageNumber.CURRENT], font: HF, size: 18, bold: true, color: BLACK })] })] }) },
+    footers: { default: new Footer({ children: [new Paragraph({ tabStops: [{ type: TabStopType.RIGHT, position: 9600 }], children: [new TextRun({ text: "Pivot Power · versión para discusión · 19 de octubre de 2026", font: BF, size: 16, color: MUTED }), new TextRun({ text: "\t", font: BF, size: 16 }), new TextRun({ children: [PageNumber.CURRENT], font: HF, size: 18, bold: true, color: BLACK })] })] }) },
     children,
   }],
 });
