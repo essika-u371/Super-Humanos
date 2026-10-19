@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell, WidthType, AlignmentType, BorderStyle, ShadingType, Header, Footer, PageNumber, LevelFormat, TabStopType } = require("docx");
+const { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell, WidthType, AlignmentType, BorderStyle, ShadingType, Header, Footer, PageNumber, LevelFormat, TabStopType, ImageRun } = require("docx");
 
 const BLACK = "0D0D0C", YELLOW = "FCC800", GOLD = "8A6B00", MUTED = "56564F", LINE = "DEDED9", BG = "F7F7F5";
 const HF = "Barlow Condensed", BF = "Atkinson Hyperlegible Next";
@@ -47,4 +47,4 @@ const box = (title, lines) => new Table({
 });
 const spacer = () => new Paragraph({ spacing: { after: 120 }, children: [] });
 
-module.exports = { fs, path, Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell, WidthType, AlignmentType, BorderStyle, ShadingType, Header, Footer, PageNumber, LevelFormat, TabStopType, BLACK, YELLOW, GOLD, MUTED, LINE, BG, HF, BF, run, P, H1, H2, K, B, bold, table, box, spacer };
+module.exports = { fs, path, Document, Packer, Paragraph, TextRun, ImageRun, Table, TableRow, TableCell, WidthType, AlignmentType, BorderStyle, ShadingType, Header, Footer, PageNumber, LevelFormat, TabStopType, BLACK, YELLOW, GOLD, MUTED, LINE, BG, HF, BF, run, P, H1, H2, K, B, bold, table, box, spacer };

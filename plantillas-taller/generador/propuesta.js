@@ -1,9 +1,10 @@
-const { fs, path, Document, Packer, Paragraph, TextRun, Header, Footer, PageNumber, LevelFormat, AlignmentType, TabStopType, BLACK, YELLOW, GOLD, MUTED, HF, BF, run, P, H1, H2, K, B, bold, table, box, spacer } = require("./docx-brand.js");
+const { fs, path, Document, Packer, Paragraph, TextRun, ImageRun, Header, Footer, PageNumber, LevelFormat, AlignmentType, TabStopType, BLACK, YELLOW, GOLD, MUTED, HF, BF, run, P, H1, H2, K, B, bold, table, box, spacer } = require("./docx-brand.js");
 
 const children = [];
 
 /* Portada */
-children.push(new Paragraph({ spacing: { before: 1200, after: 100 }, children: [new TextRun({ text: "SUPER HUMANOS", font: HF, size: 28, bold: true, color: GOLD, characterSpacing: 60 })] }));
+children.push(new Paragraph({ spacing: { before: 600, after: 500 }, children: [new ImageRun({ type: "png", data: fs.readFileSync(path.join(__dirname, "..", "logo", "pivot-power-logo-claro.png")), transformation: { width: 230, height: Math.round(230 * 546 / 2020) } })] }));
+children.push(new Paragraph({ spacing: { before: 0, after: 100 }, children: [new TextRun({ text: "SUPER HUMANOS", font: HF, size: 28, bold: true, color: GOLD, characterSpacing: 60 })] }));
 children.push(new Paragraph({ spacing: { after: 200 }, children: [new TextRun({ text: "PROPUESTA PARA LA POLÍTICA DE USO DE IA", font: HF, size: 64, bold: true, color: BLACK })] }));
 children.push(new Paragraph({ spacing: { after: 300 }, children: [new TextRun({ text: "FASES DE ADOPCIÓN, REGLA DE INFORMACIÓN POR CUENTA Y LICENCIAS POR ACTIVIDAD", font: HF, size: 32, bold: true, color: BLACK })] }));
 children.push(P("Para el área de TIC y Gestión del Talento Humano de G&J Empresas de Acero. Complementa la política de uso de inteligencia artificial y gestión de riesgo, código TH-PT-003, versión 1, que rige para las siete empresas del grupo.", { run: { color: MUTED } }));
