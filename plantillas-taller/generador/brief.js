@@ -83,7 +83,7 @@ const PERFILES = {
       "La estructura de comunicar abre el Taller 1: el resumen de cinco puntos se convierte en lo que se presenta en diez minutos: qué pasó, por qué, qué proponemos, qué necesitamos.",
       "106 referentes del grupo G4 apoyan a dos compañeros cada uno durante la práctica. Los 43 candidatos a formador interno empiezan ahí su rol.",
     ],
-    seccionAjustes: "sección 5",
+    seccionAjustes: "sección 4",
   },
 };
 
@@ -153,7 +153,7 @@ function build(p) {
 
   /* 4 · Talleres */
   children.push(H1(`4 · Los seis talleres del perfil ${p.nombre}`));
-  children.push(P("El temario detallado trae cada taller completo: objetivo, competencias, temáticas, casos, herramientas, ejercicios, evaluación y errores que vigilar. La guía de contenido dice cómo se arma: bloques, diapositivas y lo que no puede faltar de T2 a T6. Esta tabla resume el mapa y conecta cada taller con su sesión de Teams y con los retos de los jueves que lo refuerzan."));
+  children.push(P("El temario de tu perfil trae cada taller completo: objetivo, competencias, temáticas, casos, herramientas, ejercicios, evaluación y errores que vigilar. La guía de contenido dice cómo se arma: bloques, diapositivas y lo que no puede faltar de T2 a T6. Esta tabla resume el mapa y conecta cada taller con su sesión de Teams y con los retos de los jueves que lo refuerzan."));
   children.push(table(["Taller", "Título · concepto del mes", "Hábito de apertura", "Nombre de la sesión en Teams", "Retos"], p.talleres.map((t) => [t[0], `${t[1]}. ${t[2]}`, t[3], `Super Humanos · Taller ${t[0].slice(1)} · ${t[4]}`, t[5]]), [0.9, 3.4, 1.8, 3.1, 0.8]));
   children.push(P("Los retos de los jueves salen cada jueves a las 7:00 a.m. para los dos perfiles y se suben hasta el miércoles siguiente. La lista completa está en la hoja «Jueves de Superpoderes» del cronograma. El encuentro 2 abre con lo que salió del reto de la semana.", { run: { color: MUTED } }));
 
@@ -166,10 +166,10 @@ function build(p) {
   children.push(B([bold("Toda cifra se verifica. "), run("Cada demostración termina diciendo en voz alta qué se verifica contra la fuente antes de usar el resultado. Los líderes validan los resultados de su equipo.")]));
   children.push(P("El numeral 10 de la política exige cuatro contenidos de capacitación. Los cuatro van en la apertura del encuentro 1 del Taller 1, en diez minutos, y la firma pendiente se resuelve en el mismo espacio con Gestión Humana."));
   children.push(K("Lo que dice el diagnóstico de tu perfil"));
-  children.push(P(`Resultados parciales con corte del 14 de octubre, 415 personas con índice completo. Los ajustes taller por taller están en «Ajustes a los talleres», ${p.seccionAjustes}. Los que más pesan en tu preparación:`));
+  children.push(P(`Resultados parciales con corte del 14 de octubre, 415 personas con índice completo. Los ajustes taller por taller están en «Ajustes a los talleres · perfil ${p.nombre}», ${p.seccionAjustes}, y el resumen completo en «Resumen del diagnóstico · perfil ${p.nombre}». Los que más pesan en tu preparación:`));
   p.diag.forEach((t) => children.push(B(t)));
   children.push(box("Los resultados individuales del diagnóstico son de uso interno", [
-    "El paquete trae los resultados agregados por perfil. Los nombres, las empresas y los puntajes de cada persona quedan con la dirección del programa. Cuando necesites un dato por grupo o por sede, pídelo a Jessica Peña.",
+    "El paquete trae los resultados agregados de tu perfil. Los nombres, las empresas y los puntajes de cada persona quedan con la dirección del programa. Cuando necesites un dato por grupo o por sede, pídelo a Jessica Peña.",
   ]));
 
   /* 6 · Plantillas */
@@ -195,12 +195,13 @@ function build(p) {
     [`Paquete del docente · perfil ${p.nombre}`, "Este documento."],
     ["Cronograma Super Humanos · etapa 1", "Todas las fechas del programa: encuentros, retos, preparación de materiales, decisiones y pendientes. Vale la versión del 19 de octubre."],
     [`Sesiones de Teams · perfil ${p.nombre}`, "Tus 18 reuniones con nombre y descripción, tal como las recibe la gente en la invitación. El nombre de la sesión abre la portada de cada presentación."],
-    ["Temario detallado de los 12 talleres", "Contenido completo de cada taller. Lee los seis de tu perfil y los seis del otro, para que los dos programas se hablen."],
-    ["Guía de contenido por taller", "Bloques, minutos y diapositivas de cada encuentro; mapa del Taller 1; lo que no puede faltar de T2 a T6; checklist de entrega. Las fechas que trae están superadas por este documento."],
-    ["Guía de casos de G&J", "Los casos reales de las mesas de trabajo, con su dato. Cada demostración toma uno de aquí."],
+    [`Temario detallado · perfil ${p.nombre}`, "Contenido completo de tus seis talleres, con los elementos del método, las herramientas, los casos de tu perfil y los retos de los jueves."],
+    [`Resumen del diagnóstico · perfil ${p.nombre}`, "Lo que el diagnóstico encontró en tu perfil: índices, situaciones que resolvió bien y mal, uso de IA, cómo trabaja hoy, condiciones de conexión, grupos y qué cambia en tus talleres."],
+    [`Guía de contenido · perfil ${p.nombre}`, "Bloques, minutos y diapositivas de cada encuentro; mapa de tu Taller 1; lo que no puede faltar de T2 a T6; checklist de entrega."],
+    [`Guía de casos de G&J · perfil ${p.nombre}`, "Los casos reales de las mesas de trabajo que se usan en tu perfil, con su dato. Cada demostración toma uno de aquí."],
     ["Kit del docente", "Formato «Mi proceso», estructura de la evaluación, prompts base y piezas que se repiten en todos los talleres."],
     ["Manual de puntajes y reconocimiento", "Cómo suman puntos la asistencia, los retos, la evaluación y «Mi proceso». Lo que anuncias en la apertura y en el cierre."],
-    ["Ajustes a los talleres · diagnóstico y política de IA", "Lo que cambia en cada taller a partir del diagnóstico y de la política. Sección 3 para todos; " + p.seccionAjustes + " para tu perfil; sección 6 para los retos."],
+    [`Ajustes a los talleres · perfil ${p.nombre}`, "Lo que cambia en cada taller a partir del diagnóstico y de la política. Sección 3 para los seis talleres, sección 4 taller por taller, sección 5 para los retos."],
     ["Política de uso de IA de G&J · TH-PT-003", "El documento que la gente firmó. Base del Taller 1."],
     ["Propuesta para la política de uso de IA", "Lo que Pivot Power le propuso a TIC: tres fases de herramientas, regla de información por cuenta y licencias por nivel. Contexto para saber con qué herramientas cuenta cada fase."],
     ["Plantillas", "Los cuatro archivos de PowerPoint de la sección 6."],
@@ -217,7 +218,7 @@ function build(p) {
   ], [5.4, 4.6]));
   children.push(spacer());
   children.push(box("Primer paso", [
-    `Lee el Taller 1 de tu perfil en el temario y en la guía de contenido, elige el caso de la demostración en la guía de casos y envía el guion a Jessica Peña el ${p.entregas[0][1].replace("Vie ", "viernes ").replace("Lun ", "lunes ").replace("Mar ", "martes ")} de octubre. La prueba técnica del Taller 1 se agenda en Teams en la fecha de la tabla de la sección 2.`,
+    `Lee el resumen del diagnóstico, el Taller 1 en el temario y en la guía de contenido, elige el caso de la demostración en la guía de casos y envía el guion a Jessica Peña el ${p.entregas[0][1].replace("Vie ", "viernes ").replace("Lun ", "lunes ").replace("Mar ", "martes ")} de octubre. La prueba técnica del Taller 1 se agenda en Teams en la fecha de la tabla de la sección 2.`,
   ]));
 
   const doc = new Document({
