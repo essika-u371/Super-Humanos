@@ -34,12 +34,12 @@ const PERFILES = {
     ],
     notaEntregas: "El Taller 1 y el Taller 2 se preparan en paralelo: los materiales del T2 vencen el viernes 23. Las fechas del T1 las fijó la dirección del programa para esta semana; de T2 en adelante rigen las de la hoja «Preparación de materiales» del cronograma.",
     diag: [
-      "Más de la mitad del grupo nunca ha abierto una herramienta de IA o la usó una o dos veces en el último mes. El Taller 1 avanza al ritmo del más lento, con una sola herramienta y sin jerga.",
-      "31 comerciales trabajan sin computador propio y varios se conectan desde el celular. Cada práctica tiene una versión para celular: el prompt se copia desde el kit y la evidencia es una captura.",
-      "25 comerciales se traban con el CRM o no lo conocen. El Taller 4 abre con veinte minutos de nivelación antes del mapa de fuentes.",
-      "52 comerciales dedican más de 5 horas semanales a tareas repetitivas. La clasificación de tareas del Taller 2 arranca con las horas que cada persona declaró.",
+      "73 de 150 comerciales, casi la mitad, usaron IA una o dos veces o ninguna en el último mes. El Taller 1 avanza al ritmo del más lento, con una sola herramienta y sin jerga.",
+      "39 comerciales trabajan sin computador propio y varios se conectan desde el celular. Cada práctica tiene una versión para celular: el prompt se copia desde el kit y la evidencia es una captura.",
+      "26 comerciales se traban con el CRM o no lo conocen. El Taller 4 abre con veinte minutos de nivelación antes del mapa de fuentes.",
+      "54 comerciales dedican más de 5 horas semanales a tareas repetitivas. La clasificación de tareas del Taller 2 arranca con las horas que cada persona declaró.",
       "La bandeja de 40 correos del lunes es el caso de flujo del Taller 3: distinguir trabajo de espera y armar la solicitud completa desde ahí.",
-      "106 referentes del grupo G4 apoyan a dos compañeros cada uno durante la práctica. Los 43 candidatos a formador interno empiezan ahí su rol.",
+      "38 referentes del grupo G4 apoyan a dos compañeros cada uno durante la práctica. Los 17 candidatos comerciales a formador interno empiezan ahí su rol.",
     ],
     seccionAjustes: "sección 4",
   },
@@ -76,12 +76,12 @@ const PERFILES = {
     ],
     notaEntregas: "El Taller 1 arranca el viernes 23 de octubre. El guion y la presentación del encuentro 1 van el martes 20, la prueba técnica el miércoles 21 y los materiales del encuentro 2 con la evaluación el viernes 23. De T2 en adelante rigen las fechas de la hoja «Preparación de materiales» del cronograma.",
     diag: [
-      "Más de la mitad del grupo nunca ha abierto una herramienta de IA o la usó una o dos veces en el último mes. El Taller 1 avanza al ritmo del más lento, con una sola herramienta y sin jerga.",
-      "89 administrativos dedican más de 5 horas semanales a tareas repetitivas. En el Taller 2 cada persona anota cuánto le toma el reporte del mes antes de tocarlo.",
-      "103 administrativos hacen informes que también hace otra área, o creen que sí. El Taller 4 levanta el inventario de reportes del área.",
-      "48 personas dicen que su trabajo está sin escribir. El ejercicio de la guía de una página del Taller 4 y el reto 19 se conectan con ellas.",
+      "154 de 332 administrativos, el 46 %, usaron IA una o dos veces o ninguna en el último mes. El Taller 1 avanza al ritmo del más lento, con una sola herramienta y sin jerga.",
+      "100 administrativos dedican más de 5 horas semanales a tareas repetitivas. En el Taller 2 cada persona anota cuánto le toma el reporte del mes antes de tocarlo.",
+      "121 administrativos hacen informes que también hace otra área y 69 creen que sí. El Taller 4 levanta el inventario de reportes del área.",
+      "32 administrativos dicen que su trabajo está sin escribir. El ejercicio de la guía de una página del Taller 4 y el reto 19 se conectan con ellas.",
       "La estructura de comunicar abre el Taller 1: el resumen de cinco puntos se convierte en lo que se presenta en diez minutos: qué pasó, por qué, qué proponemos, qué necesitamos.",
-      "106 referentes del grupo G4 apoyan a dos compañeros cada uno durante la práctica. Los 43 candidatos a formador interno empiezan ahí su rol.",
+      "84 referentes del grupo G4 apoyan a dos compañeros cada uno durante la práctica. Los 33 candidatos administrativos a formador interno empiezan ahí su rol.",
     ],
     seccionAjustes: "sección 4",
   },
@@ -93,7 +93,7 @@ function build(p) {
   children.push(new Paragraph({ spacing: { before: 1200, after: 100 }, children: [new TextRun({ text: "SUPER HUMANOS", font: HF, size: 28, bold: true, color: GOLD, characterSpacing: 60 })] }));
   children.push(new Paragraph({ spacing: { after: 200 }, children: [new TextRun({ text: "PAQUETE DEL DOCENTE", font: HF, size: 72, bold: true, color: BLACK })] }));
   children.push(new Paragraph({ spacing: { after: 300 }, children: [new TextRun({ text: `PERFIL ${p.NOMBRE} · ${p.DOCENTE}`, font: HF, size: 34, bold: true, color: BLACK })] }));
-  children.push(P("Pivot Power · 19 de octubre de 2026 · fechas según el cronograma ajustado del 19 de octubre", { run: { color: MUTED } }));
+  children.push(P("Pivot Power · 27 de octubre de 2026 · fechas según el cronograma ajustado del 19 de octubre", { run: { color: MUTED } }));
   children.push(spacer());
   children.push(box("Para qué sirve este documento", [
     `Abre el paquete con el que preparas los seis talleres del perfil ${p.nombre}. Trae tus fechas, lo que entregas y cuándo, cómo se arma cada encuentro, las reglas que condicionan el contenido y la lista de archivos de la carpeta. Cuando dos documentos difieran en una fecha, vale la de este documento y la del cronograma.`,
@@ -166,7 +166,7 @@ function build(p) {
   children.push(B([bold("Toda cifra se verifica. "), run("Cada demostración termina diciendo en voz alta qué se verifica contra la fuente antes de usar el resultado. Los líderes validan los resultados de su equipo.")]));
   children.push(P("El numeral 10 de la política exige cuatro contenidos de capacitación. Los cuatro van en la apertura del encuentro 1 del Taller 1, en diez minutos, y la firma pendiente se resuelve en el mismo espacio con Gestión Humana."));
   children.push(K("Lo que dice el diagnóstico de tu perfil"));
-  children.push(P(`Resultados parciales con corte del 14 de octubre, 415 personas con índice completo. Los ajustes taller por taller están en «Ajustes a los talleres · perfil ${p.nombre}», ${p.seccionAjustes}, y el resumen completo en «Resumen del diagnóstico · perfil ${p.nombre}». Los que más pesan en tu preparación:`));
+  children.push(P(`Resultados con corte del 23 de octubre: ${p.nombre === "comercial" ? "150 de 201 comerciales" : "332 de 479 administrativos"} terminaron el diagnóstico. Los ajustes taller por taller están en «Ajustes a los talleres · perfil ${p.nombre}», ${p.seccionAjustes}, y el resumen completo en «Resumen del diagnóstico · perfil ${p.nombre}». Los que más pesan en tu preparación:`));
   p.diag.forEach((t) => children.push(B(t)));
   children.push(box("Los resultados individuales del diagnóstico son de uso interno", [
     "El paquete trae los resultados agregados de tu perfil. Los nombres, las empresas y los puntajes de cada persona quedan con la dirección del programa. Cuando necesites un dato por grupo o por sede, pídelo a Jessica Peña.",
@@ -228,7 +228,7 @@ function build(p) {
     sections: [{
       properties: { page: { margin: { top: 1100, bottom: 1100, left: 1134, right: 1134 } } },
       headers: { default: new Header({ children: [new Paragraph({ children: [new TextRun({ text: `SUPER HUMANOS · PAQUETE DEL DOCENTE · PERFIL ${p.NOMBRE}`, font: HF, size: 17, bold: true, color: MUTED, characterSpacing: 30 })] })] }) },
-      footers: { default: new Footer({ children: [new Paragraph({ tabStops: [{ type: TabStopType.RIGHT, position: 9600 }], children: [new TextRun({ text: "Pivot Power · 19 de octubre de 2026", font: BF, size: 16, color: MUTED }), new TextRun({ text: "\t", font: BF, size: 16 }), new TextRun({ children: [PageNumber.CURRENT], font: HF, size: 18, bold: true, color: BLACK })] })] }) },
+      footers: { default: new Footer({ children: [new Paragraph({ tabStops: [{ type: TabStopType.RIGHT, position: 9600 }], children: [new TextRun({ text: "Pivot Power · 27 de octubre de 2026", font: BF, size: 16, color: MUTED }), new TextRun({ text: "\t", font: BF, size: 16 }), new TextRun({ children: [PageNumber.CURRENT], font: HF, size: 18, bold: true, color: BLACK })] })] }) },
       children,
     }],
   });
