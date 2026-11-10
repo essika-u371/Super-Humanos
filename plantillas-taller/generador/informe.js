@@ -9,6 +9,32 @@ function tbl(s, head, rows, x, y, w, colW, opts = {}) {
   const R = rows.map((r, i) => r.map((t, j) => ({ text: String(t), options: { fontFace: BF, fontSize: fs, color: "0D0D0C", bold: !!(opts.boldLast && i === rows.length - 1), fill: { color: (opts.boldLast && i === rows.length - 1) ? "F7F7F5" : "FFFFFF" }, align: j === 0 ? "left" : (opts.alignRest || "center"), valign: "middle" } })));
   s.addTable([H, ...R], { x, y, w, colW, border: { type: "solid", pt: 0.75, color: "DEDED9" }, rowH: opts.rowH || 0.32, margin: 0.06 });
 }
+
+/* Barras dibujadas con formas: se ven igual en PowerPoint, Keynote y Google Slides */
+function hbars(s, items, x, y, w, h, opts = {}) {
+  const labW = opts.labW || 3.2, valW = 0.9, gap = 0.12;
+  const rowH = (h - gap * (items.length - 1)) / items.length;
+  const max = opts.max || Math.max(...items.map((i) => i[1]));
+  items.forEach(([lab, v, txt], i) => {
+    const yy = y + i * (rowH + gap);
+    s.addText(lab, { x, y: yy, w: labW - 0.15, h: rowH, fontFace: opts.labFont || BF, fontSize: opts.labSize || 12, bold: !!opts.labBold, color: "0D0D0C", align: "right", valign: "middle", margin: 0, isTextBox: true });
+    const bw = Math.max(0.05, (w - labW - valW) * v / max);
+    s.addShape("rect", { x: x + labW, y: yy + rowH * 0.15, w: bw, h: rowH * 0.7, fill: { color: opts.color || "FCC800" }, line: { width: 0, color: opts.color || "FCC800" } });
+    s.addText(txt, { x: x + labW + bw + 0.08, y: yy, w: valW, h: rowH, fontFace: HF, fontSize: opts.valSize || 15, bold: true, color: "0D0D0C", valign: "middle", margin: 0, isTextBox: true });
+  });
+}
+function vbars(s, items, x, y, w, h, opts = {}) {
+  const gap = 0.3, colW = (w - gap * (items.length - 1)) / items.length;
+  const labH = 0.4, valH = 0.4, max = opts.max || Math.max(...items.map((i) => i[1]));
+  const base = y + h - labH;
+  s.addShape("line", { x, y: base, w, h: 0, line: { color: "C4C4BE", width: 1 } });
+  items.forEach(([lab, v, txt], i) => {
+    const xx = x + i * (colW + gap), bh = (h - labH - valH) * v / max;
+    s.addShape("rect", { x: xx, y: base - bh, w: colW, h: bh, fill: { color: opts.color || "FCC800" }, line: { width: 0, color: opts.color || "FCC800" } });
+    s.addText(txt, { x: xx - 0.2, y: base - bh - valH, w: colW + 0.4, h: valH, fontFace: HF, fontSize: 18, bold: true, color: "0D0D0C", align: "center", valign: "bottom", margin: 0, isTextBox: true });
+    s.addText(lab, { x: xx - 0.2, y: base + 0.05, w: colW + 0.4, h: labH - 0.05, fontFace: HF, fontSize: 15, bold: true, color: "0D0D0C", align: "center", valign: "top", margin: 0, isTextBox: true });
+  });
+}
 function section(pres, n, t, sub) {
   const s = pres.addSlide({ masterName: "SECCION" });
   s.addText(n, { x: B.M, y: 1.9, w: 3, h: 1.2, fontFace: HF, fontSize: 96, bold: true, color: "FCC800", margin: 0, isTextBox: true });
@@ -131,10 +157,7 @@ build("Super Humanos · Informe de avance · G&J · 10 nov 2026.pptx", "SUPER HU
   /* 9b · Qué espera la gente */
   s = pres.addSlide({ masterName: "CONTENIDO_CLARO" });
   B.title(s, "Qué espera la gente de la IA");
-  s.addChart(pres.ChartType.bar, [{ name: "% de quienes respondieron", labels: ["Ahorrar tiempo y trabajar más rápido", "Organizar tareas y pendientes", "Atención al cliente, cotizaciones y ventas", "Automatizar lo repetitivo", "Analizar datos y cifras", "Aprender a usarla", "Reportes e informes"], values: [38.3, 23.1, 13.7, 11.2, 10.3, 8.8, 6.7] }], {
-    x: B.M, y: 1.45, w: 6.6, h: 4.6, barDir: "bar", chartColors: ["FCC800"], showValue: true, dataLabelFormatCode: '0"%"', dataLabelFontFace: HF, dataLabelFontSize: 13, dataLabelFontBold: true,
-    catAxisLabelFontFace: BF, catAxisLabelFontSize: 11, catAxisOrientation: "maxMin", valAxisHidden: true, valGridLine: { style: "none" }, barGapWidthPct: 40,
-  });
+  hbars(s, [["Ahorrar tiempo y trabajar más rápido", 38.3, "38 %"], ["Organizar tareas y pendientes", 23.1, "23 %"], ["Atención al cliente, cotizaciones y ventas", 13.7, "14 %"], ["Automatizar lo repetitivo", 11.2, "11 %"], ["Analizar datos y cifras", 10.3, "10 %"], ["Aprender a usarla", 8.8, "9 %"], ["Reportes e informes", 6.7, "7 %"]], B.M, 1.6, 6.6, 4.5, { labW: 3.3, labSize: 12 });
   B.promptBlock(s, "«Me gustaría aligerar las tareas, ganando tiempo y hacer uso adecuado del mismo. No me gusta que la IA reemplace mi pensar, análisis y criterio.»", 7.5, 1.55, 5.2, 2.2, { label: "Lo dijo un participante", fontSize: 14 });
   B.body(s, "El programa enseña a delegar la ejecución repetitiva y a quedarse con el criterio. Los docentes abren el Taller 1 con esta frase.", 7.5, 3.95, 5.2, 0.9, { fontSize: 13.5 });
   B.kicker(s, "Qué reconocimiento valoran", 7.5, 4.9, false);
@@ -159,10 +182,7 @@ build("Super Humanos · Informe de avance · G&J · 10 nov 2026.pptx", "SUPER HU
   /* 12 · Participación por reto */
   s = pres.addSlide({ masterName: "CONTENIDO_CLARO" });
   B.title(s, "Participación por reto");
-  s.addChart(pres.ChartType.bar, [{ name: "% de inscritos", labels: ["Reto 1", "Reto 2", "Reto 3", "Reto 4", "Reto 5", "Reto 6"], values: [51, 44, 44, 38, 43, 23] }], {
-    x: B.M, y: 1.45, w: 7.2, h: 4.9, barDir: "col", chartColors: ["FCC800"], showValue: true, dataLabelFormatCode: '0"%"', dataLabelFontFace: HF, dataLabelFontSize: 16, dataLabelFontBold: true, dataLabelColor: "0D0D0C",
-    catAxisLabelFontFace: HF, catAxisLabelFontSize: 14, catAxisLabelColor: "0D0D0C", valAxisHidden: true, valGridLine: { style: "none" }, valAxisMaxVal: 60, valAxisMinVal: 0, barGapWidthPct: 55,
-  });
+  vbars(s, [["Reto 1", 51, "51 %"], ["Reto 2", 44, "44 %"], ["Reto 3", 44, "44 %"], ["Reto 4", 38, "38 %"], ["Reto 5", 43, "43 %"], ["Reto 6", 23, "23 %"]], B.M, 1.6, 7.0, 4.7, { max: 55 });
   B.card(s, 8.2, 1.55, 4.5, 4.75, { fill: "F7F7F5" });
   B.kicker(s, "Lectura", 8.45, 1.75, false);
   B.bullets(s, [
@@ -175,10 +195,7 @@ build("Super Humanos · Informe de avance · G&J · 10 nov 2026.pptx", "SUPER HU
   /* 13 · Constancia y empresas */
   s = pres.addSlide({ masterName: "CONTENIDO_CLARO" });
   B.title(s, "Constancia y participación por empresa");
-  s.addChart(pres.ChartType.bar, [{ name: "Personas", labels: ["6 retos", "5", "4", "3", "2", "1", "Ninguno"], values: [59, 107, 94, 54, 77, 70, 215] }], {
-    x: B.M, y: 1.45, w: 5.2, h: 4.5, barDir: "bar", chartColors: ["0D0D0C"], showValue: true, dataLabelFontFace: HF, dataLabelFontSize: 13, dataLabelFontBold: true,
-    catAxisLabelFontFace: HF, catAxisLabelFontSize: 13, catAxisOrientation: "maxMin", valAxisHidden: true, valGridLine: { style: "none" }, barGapWidthPct: 40,
-  });
+  hbars(s, [["6 retos", 59, "59"], ["5 retos", 107, "107"], ["4 retos", 94, "94"], ["3 retos", 54, "54"], ["2 retos", 77, "77"], ["1 reto", 70, "70"], ["Ninguno", 215, "215"]], B.M, 1.6, 5.2, 4.3, { labW: 1.2, labFont: HF, labSize: 14, labBold: true, color: "0D0D0C" });
   tbl(s, ["Empresa", "Reto 1", "Reto 5", "4 o más", "Ninguno"], [
     ["Sigmasteel", "80 %", "67 %", "39", "5"], ["Colmena", "51 %", "57 %", "44", "11"], ["G&J Soluciones", "59 %", "48 %", "35", "18"], ["G&J Ramírez", "40 %", "55 %", "8", "7"],
     ["Almasa", "36 %", "47 %", "25", "33"], ["G&J Ferreterías", "50 %", "34 %", "108", "140"], ["Total", "51 %", "43 %", "260", "215"],
