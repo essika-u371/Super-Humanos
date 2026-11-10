@@ -31,22 +31,23 @@ build("Super Humanos · Informe de avance · G&J · 10 nov 2026.pptx", "SUPER HU
   /* 2 · Resumen */
   s = pres.addSlide({ masterName: "CONTENIDO_OSCURO" });
   B.title(s, "El programa en cuatro cifras");
-  const nums = [["79 %", "terminó el diagnóstico: 536 de 680 personas"], ["67 %", "envió al menos un reto: 454 de 676"], ["34 %", "envió 4 retos o más: 227 personas"], ["50", "candidatos a formador interno salen del diagnóstico"]];
+  const nums = [["80 %", "terminó el diagnóstico: 544 de 680 personas"], ["68 %", "envió al menos un reto: 461 de 676"], ["38 %", "envió 4 retos o más: 260 personas"], ["50", "candidatos a formador interno salen del diagnóstico"]];
   nums.forEach(([n, l], i) => B.bigNumber(s, n, l, B.M + i * 3.05, 1.7, 2.8, { dark: true, size: 64 }));
   B.kicker(s, "Lo que sigue", B.M, 3.95, true);
   B.bullets(s, [
-    "Taller 1: consultorio el jueves 12 de noviembre y segunda sesión el 18 (administrativo) y el 19 (comercial).",
+    "Taller 1: consultorio el jueves 12 de noviembre y segunda sesión el miércoles 18 (administrativo) y el jueves 19 (comercial).",
     "Taller 2 en diciembre: arranca el viernes 4 con el perfil comercial.",
     "Cerrar el diagnóstico de G&J Ferreterías, que concentra el faltante, y mover la participación en retos de esa empresa.",
+    "Crear en Teams las reuniones de los talleres 2 a 6: las del Taller 1 ya están listas.",
   ], B.M, 4.35, 12, 2, { dark: true, fontSize: 17 });
-  note(s, "Fuentes: plataforma Pipolearning y consolidado de retos, corte del 9 de noviembre de 2026.", true);
+  note(s, "Fuentes: plataforma Pipolearning y consolidado de retos, corte del 10 de noviembre de 2026.", true);
 
   /* 3 · Avance del proyecto */
   s = pres.addSlide({ masterName: "CONTENIDO_CLARO" });
   B.title(s, "Avance del proyecto");
   B.chevronBar(s, [
     { label: "Alistamiento", sub: "Plan, cronograma, plataforma y docentes", done: true },
-    { label: "Diagnóstico", sub: "79 % terminado · análisis por perfil", done: true },
+    { label: "Diagnóstico", sub: "80 % terminado · análisis por perfil", done: true },
     { label: "Taller 1", sub: "Sesión 1 el 23 de octubre · cierra el 19 de noviembre", done: true },
     { label: "Talleres 2 a 6", sub: "Diciembre a abril", done: false },
     { label: "Cierre", sub: "Proyectos, Banco de Retos y diagnóstico final", done: false },
@@ -57,7 +58,8 @@ build("Super Humanos · Informe de avance · G&J · 10 nov 2026.pptx", "SUPER HU
     "Diagnóstico aplicado en la plataforma, con análisis por perfil y grupos de nivel.",
     "Docentes asignados: Mateo Peralta en comercial y José Cormane en administrativo, con su paquete de preparación.",
     "Los 12 talleres y sus 36 encuentros cargados en la plataforma.",
-    "Retos de los jueves 1 a 6 publicados; 454 personas ya participaron.",
+    "Retos de los jueves 1 a 6 publicados; 461 personas ya participaron.",
+    "Reuniones de Teams del Taller 1 creadas, con enlace fijo para sus tres encuentros.",
     "Propuesta de política de uso de IA preparada para TIC: fases, información por cuenta y licencias.",
   ], B.M + 0.25, 3.7, 5.4, 2.6, { fontSize: 13.5, paraSpaceAfter: 5 });
   B.kicker(s, "En curso", B.M + 6.45, 3.3, false);
@@ -65,7 +67,7 @@ build("Super Humanos · Informe de avance · G&J · 10 nov 2026.pptx", "SUPER HU
     "Segunda sesión y consultorio del Taller 1.",
     "Respuesta de TIC sobre herramientas, cuentas y dominios autorizados.",
     "Revisión de las 16 postulaciones a formador interno, con el visto bueno de cada líder.",
-    "Cierre del diagnóstico con las 144 personas que faltan.",
+    "Cierre del diagnóstico con las 136 personas que faltan.",
     "Definición de premios y canje de puntos por empresa.",
   ], B.M + 6.45, 3.7, 5.4, 2.6, { fontSize: 13.5, paraSpaceAfter: 5 });
 
@@ -74,18 +76,18 @@ build("Super Humanos · Informe de avance · G&J · 10 nov 2026.pptx", "SUPER HU
 
   /* 5 · Avance por empresa */
   s = pres.addSlide({ masterName: "CONTENIDO_CLARO" });
-  B.title(s, "536 de 680 personas terminaron el diagnóstico");
+  B.title(s, "544 de 680 personas terminaron el diagnóstico");
   tbl(s, ["Empresa", "Personas", "Diagnóstico"], [
-    ["Sigmasteel", "55", "95 %"], ["Colmena", "79", "95 %"], ["G&J Soluciones", "82", "82 %"], ["G&J Ramírez", "20", "80 %"],
-    ["Almasa", "81", "79 %"], ["Almapanel", "4", "75 %"], ["G&J Ferreterías", "355", "72 %"], ["Total", "676", "79 %"],
+    ["Sigmasteel", "55", "96 %"], ["Colmena", "79", "95 %"], ["G&J Soluciones", "82", "83 %"], ["G&J Ramírez", "20", "80 %"],
+    ["Almasa", "81", "79 %"], ["Almapanel", "4", "75 %"], ["G&J Ferreterías", "355", "74 %"], ["Total", "676", "80 %"],
   ], B.M, 1.55, 6.2, [3.2, 1.5, 1.5], { boldLast: true, rowH: 0.42, fontSize: 13 });
-  B.bigNumber(s, "62 % → 79 %", "Cobertura del 14 de octubre al 9 de noviembre", 7.4, 1.4, 5.3, { size: 48 });
+  B.bigNumber(s, "62 % → 80 %", "Cobertura del 14 de octubre al 10 de noviembre", 7.4, 1.4, 5.3, { size: 48 });
   B.bullets(s, [
     "Sigmasteel y Colmena casi cerraron: tuvieron un responsable haciendo seguimiento persona por persona.",
     "G&J Ferreterías tiene más de la mitad de la población y es la que más falta.",
-    "Con el 79 %, los grupos y los resultados por perfil ya son estables.",
+    "Con el 80 %, los grupos y los resultados por perfil ya son estables.",
   ], 7.4, 3.2, 5.3, 3, { fontSize: 14.5 });
-  note(s, "Fuente: plataforma, 9 de noviembre de 2026. El total por empresa usa la base de retos (676); la plataforma reporta 680 personas activas.");
+  note(s, "Fuente: plataforma, 10 de noviembre de 2026. El total por empresa usa la base de retos (676); la plataforma reporta 680 personas activas.");
 
   /* 6 · Sección análisis */
   section(pres, "02", "Lo que dice el diagnóstico", "Análisis de 482 personas con índice completo, corte del 23 de octubre.");
@@ -126,6 +128,19 @@ build("Super Humanos · Informe de avance · G&J · 10 nov 2026.pptx", "SUPER HU
   st.forEach(([n, l], i) => B.bigNumber(s, n, l, B.M + (i % 3) * 4.1, 1.5 + Math.floor(i / 3) * 2.35, 3.7, { dark: true, size: 54 }));
   note(s, "Sobre 482 personas con diagnóstico completo, corte del 23 de octubre. 33 % reporta herramientas de IA bloqueadas total o parcialmente desde la red.", true);
 
+  /* 9b · Qué espera la gente */
+  s = pres.addSlide({ masterName: "CONTENIDO_CLARO" });
+  B.title(s, "Qué espera la gente de la IA");
+  s.addChart(pres.ChartType.bar, [{ name: "% de quienes respondieron", labels: ["Ahorrar tiempo y trabajar más rápido", "Organizar tareas y pendientes", "Atención al cliente, cotizaciones y ventas", "Automatizar lo repetitivo", "Analizar datos y cifras", "Aprender a usarla", "Reportes e informes"], values: [38.3, 23.1, 13.7, 11.2, 10.3, 8.8, 6.7] }], {
+    x: B.M, y: 1.45, w: 6.6, h: 4.6, barDir: "bar", chartColors: ["FCC800"], showValue: true, dataLabelFormatCode: '0"%"', dataLabelFontFace: HF, dataLabelFontSize: 13, dataLabelFontBold: true,
+    catAxisLabelFontFace: BF, catAxisLabelFontSize: 11, catAxisOrientation: "maxMin", valAxisHidden: true, valGridLine: { style: "none" }, barGapWidthPct: 40,
+  });
+  B.promptBlock(s, "«Me gustaría aligerar las tareas, ganando tiempo y hacer uso adecuado del mismo. No me gusta que la IA reemplace mi pensar, análisis y criterio.»", 7.5, 1.55, 5.2, 2.2, { label: "Lo dijo un participante", fontSize: 14 });
+  B.body(s, "El programa enseña a delegar la ejecución repetitiva y a quedarse con el criterio. Los docentes abren el Taller 1 con esta frase.", 7.5, 3.95, 5.2, 0.9, { fontSize: 13.5 });
+  B.kicker(s, "Qué reconocimiento valoran", 7.5, 4.9, false);
+  B.body(s, "Comercial: bono o premio (76 %) y tiempo libre (40 %). Administrativo: crecimiento o ascenso (66 %) y certificación (17 %). Un catálogo de premios distinto por perfil responde mejor a lo que cada grupo pidió.", 7.5, 5.25, 5.2, 1.2, { fontSize: 12.5 });
+  note(s, "Fuente: informe del diagnóstico inicial, 329 respuestas abiertas al 14 de octubre de 2026.");
+
   /* 10 · Grupos y formadores */
   s = pres.addSlide({ masterName: "CONTENIDO_CLARO" });
   B.title(s, "Grupos de nivel y formadores internos");
@@ -144,29 +159,29 @@ build("Super Humanos · Informe de avance · G&J · 10 nov 2026.pptx", "SUPER HU
   /* 12 · Participación por reto */
   s = pres.addSlide({ masterName: "CONTENIDO_CLARO" });
   B.title(s, "Participación por reto");
-  s.addChart(pres.ChartType.bar, [{ name: "% de inscritos", labels: ["Reto 1", "Reto 2", "Reto 3", "Reto 4", "Reto 5", "Reto 6"], values: [51, 43, 41, 34, 40, 18] }], {
+  s.addChart(pres.ChartType.bar, [{ name: "% de inscritos", labels: ["Reto 1", "Reto 2", "Reto 3", "Reto 4", "Reto 5", "Reto 6"], values: [51, 44, 44, 38, 43, 23] }], {
     x: B.M, y: 1.45, w: 7.2, h: 4.9, barDir: "col", chartColors: ["FCC800"], showValue: true, dataLabelFormatCode: '0"%"', dataLabelFontFace: HF, dataLabelFontSize: 16, dataLabelFontBold: true, dataLabelColor: "0D0D0C",
     catAxisLabelFontFace: HF, catAxisLabelFontSize: 14, catAxisLabelColor: "0D0D0C", valAxisHidden: true, valGridLine: { style: "none" }, valAxisMaxVal: 60, valAxisMinVal: 0, barGapWidthPct: 55,
   });
   B.card(s, 8.2, 1.55, 4.5, 4.75, { fill: "F7F7F5" });
   B.kicker(s, "Lectura", 8.45, 1.75, false);
   B.bullets(s, [
-    "El reto 1 llegó a la mitad de los inscritos. La participación se sostiene alrededor del 40 % hasta el reto 5.",
+    "El reto 1 llegó a la mitad de los inscritos. La participación se sostiene por encima del 38 % hasta el reto 5.",
     "El reto 6 lleva una semana publicado: los retos 3 a 6 siguen abiertos hasta el 26 de noviembre.",
-    "Comercial arrancó más alto en el reto 1 (57 %) y administrativo sostiene mejor el reto 5 (41 %).",
+    "Comercial arrancó más alto en el reto 1 (57 %) y lleva el reto 6 más adelantado (32 % frente a 19 %).",
   ], 8.45, 2.15, 4.05, 4, { fontSize: 14 });
-  note(s, "Fuente: consolidado de retos, 9 de noviembre de 2026. Retos 1 y 2 por correo; retos 3 a 6 en la plataforma y por correo. Base: 676 inscritos.");
+  note(s, "Fuente: consolidado de retos, 10 de noviembre de 2026. Retos 1 y 2 por correo; retos 3 a 6 en la plataforma y por correo. Base: 676 inscritos.");
 
   /* 13 · Constancia y empresas */
   s = pres.addSlide({ masterName: "CONTENIDO_CLARO" });
   B.title(s, "Constancia y participación por empresa");
-  s.addChart(pres.ChartType.bar, [{ name: "Personas", labels: ["6 retos", "5", "4", "3", "2", "1", "Ninguno"], values: [40, 92, 95, 71, 80, 76, 222] }], {
+  s.addChart(pres.ChartType.bar, [{ name: "Personas", labels: ["6 retos", "5", "4", "3", "2", "1", "Ninguno"], values: [59, 107, 94, 54, 77, 70, 215] }], {
     x: B.M, y: 1.45, w: 5.2, h: 4.5, barDir: "bar", chartColors: ["0D0D0C"], showValue: true, dataLabelFontFace: HF, dataLabelFontSize: 13, dataLabelFontBold: true,
     catAxisLabelFontFace: HF, catAxisLabelFontSize: 13, catAxisOrientation: "maxMin", valAxisHidden: true, valGridLine: { style: "none" }, barGapWidthPct: 40,
   });
   tbl(s, ["Empresa", "Reto 1", "Reto 5", "4 o más", "Ninguno"], [
-    ["Sigmasteel", "80 %", "62 %", "36", "5"], ["Colmena", "51 %", "54 %", "41", "11"], ["G&J Soluciones", "59 %", "48 %", "35", "18"], ["G&J Ramírez", "40 %", "50 %", "6", "8"],
-    ["Almasa", "36 %", "44 %", "22", "35"], ["G&J Ferreterías", "49 %", "29 %", "86", "144"], ["Total", "51 %", "40 %", "227", "222"],
+    ["Sigmasteel", "80 %", "67 %", "39", "5"], ["Colmena", "51 %", "57 %", "44", "11"], ["G&J Soluciones", "59 %", "48 %", "35", "18"], ["G&J Ramírez", "40 %", "55 %", "8", "7"],
+    ["Almasa", "36 %", "47 %", "25", "33"], ["G&J Ferreterías", "50 %", "34 %", "108", "140"], ["Total", "51 %", "43 %", "260", "215"],
   ], 6.2, 1.55, 6.5, [2.3, 1.05, 1.05, 1.05, 1.05], { boldLast: true, rowH: 0.42, fontSize: 12.5 });
   B.body(s, "Dos de cada tres personas que no han enviado ningún reto son de G&J Ferreterías.", 6.2, 5.2, 6.5, 0.8, { fontSize: 14 });
   note(s, "Almapanel (4 personas) incluida en el total.");
@@ -177,27 +192,27 @@ build("Super Humanos · Informe de avance · G&J · 10 nov 2026.pptx", "SUPER HU
   /* 15 · Cronograma */
   s = pres.addSlide({ masterName: "CONTENIDO_CLARO" });
   B.title(s, "Cronograma de las próximas sesiones");
-  tbl(s, ["Taller", "Perfil", "Sesión 1", "Consultorio · 4:00 p. m.", "Sesión 2"], [
-    ["1 · La IA no sabe nada de tu cliente", "Comercial", "Vie 23 oct · hecha", "Jue 12 nov", "Jue 19 nov · 7:30"],
-    ["1 · La IA no consulta tus sistemas", "Administrativo", "Vie 23 oct · hecha", "Jue 12 nov · 2:00 p. m.", "Mié 18 nov · 8:00"],
-    ["2 · Tu cartera tiene cosas que contarte", "Comercial", "Vie 4 dic · 7:30", "Mié 9 dic", "Vie 11 dic · 7:30"],
-    ["2 · Tres días armando el reporte", "Administrativo", "Jue 10 dic · 8:00", "Mar 15 dic", "Jue 17 dic · 8:00"],
-    ["3 · El pedido no se demora trabajando", "Comercial", "Mié 13 ene · 7:30", "Lun 18 ene", "Mié 20 ene · 7:30"],
-    ["3 · De la bandeja al tablero", "Administrativo", "Mié 13 ene · 8:00", "Vie 15 ene", "Mié 20 ene · 8:00"],
-  ], B.M, 1.5, 12.1, [3.8, 1.6, 2.2, 2.3, 2.2], { rowH: 0.5, fontSize: 12 });
+  tbl(s, ["Taller", "Perfil · docente", "Sesión 1", "Consultorio", "Sesión 2"], [
+    ["1 · La IA no sabe nada de tu cliente", "Comercial · Mateo Peralta", "Vie 23 oct · hecha", "Jue 12 nov · 4:00 p. m.", "Jue 19 nov · 7:30"],
+    ["1 · La IA no consulta tus sistemas", "Administrativo · José Cormane", "Vie 23 oct · hecha", "Jue 12 nov · 2:00 p. m.", "Mié 18 nov · 8:00"],
+    ["2 · Tu cartera tiene cosas que contarte", "Comercial · Mateo Peralta", "Vie 4 dic · 7:30", "Mié 9 dic · 4:00 p. m.", "Vie 11 dic · 7:30"],
+    ["2 · Tres días armando el reporte", "Administrativo · José Cormane", "Jue 10 dic · 8:00", "Mar 15 dic · 4:00 p. m.", "Jue 17 dic · 8:00"],
+    ["3 · El pedido no se demora trabajando", "Comercial · Mateo Peralta", "Mié 13 ene · 7:30", "Lun 18 ene · 4:00 p. m.", "Mié 20 ene · 7:30"],
+    ["3 · De la bandeja al tablero", "Administrativo · José Cormane", "Mié 13 ene · 8:00", "Vie 15 ene · 4:00 p. m.", "Mié 20 ene · 8:00"],
+  ], B.M, 1.5, 12.1, [3.4, 2.7, 1.95, 2.1, 1.95], { rowH: 0.5, fontSize: 11.5 });
   tbl(s, ["Talleres 4 a 6", "Comercial", "Administrativo"], [
     ["4 · Contexto antes que modelo", "Vie 5 feb · Vie 12 feb", "Mié 10 feb · Mié 17 feb"],
     ["5 · Humano + IA", "Vie 5 mar · Vie 12 mar", "Mié 10 mar · Mié 17 mar"],
     ["6 · Mide, mejora, demuestra", "Vie 9 abr · Vie 16 abr", "Mié 14 abr · Mié 21 abr"],
   ], B.M, 5.15, 12.1, [4.5, 3.8, 3.8], { rowH: 0.36, fontSize: 11.5 });
-  note(s, "Fuente: encuentros cargados en la plataforma al 10 de noviembre. Comercial a las 7:30 a. m. y administrativo a las 8:00 a. m., salvo donde se indica.");
+  note(s, "Fuente: sesiones de Teams y plataforma al 10 de noviembre. Encuentros de hora y media: comercial desde las 7:30 a. m. y administrativo desde las 8:00 a. m. Consultorios de una hora.");
 
   /* 16 · Pedidos */
   s = pres.addSlide({ masterName: "CONTENIDO_OSCURO" });
   B.title(s, "Lo que necesitamos de G&J");
   const asks = [
-    ["users", "Cerrar el diagnóstico", "Un responsable por empresa, empezando por G&J Ferreterías, para las 144 personas que faltan."],
-    ["chat", "Convocar el Taller 1", "Invitaciones al consultorio del 12 de noviembre y a la segunda sesión del 18 y el 19."],
+    ["users", "Cerrar el diagnóstico", "Un responsable por empresa, empezando por G&J Ferreterías, para las 136 personas que faltan."],
+    ["chat", "Convocatoria en Teams", "Mover la fecha de las reuniones del Taller 1 al 12, 18 y 19 de noviembre, y crear las de los talleres 2 a 6."],
     ["lock", "Herramientas autorizadas", "Respuesta de TIC sobre la propuesta de política: herramientas, cuentas y dominios habilitados."],
     ["medal", "Formadores y premios", "Visto bueno de los líderes a las 16 postulaciones y definición de premios por empresa."],
   ];
